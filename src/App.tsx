@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { EGames, IGames } from "./@types/Games";
 import "./App.css";
-import lotoImg from "./assets/Logo_sena.svg";
 import { api } from "./services/axios";
 
 export function App() {
@@ -84,7 +83,7 @@ export function App() {
           })}
       
         </select>
-        <img src={lotoImg} alt="Logo da Loteria" />
+        <img src="/logo.svg" alt="Logo da Loteria" />
         <h1>{game}</h1>
         <p>Concurso Nº {lottery.concurso}</p>
       </div>
