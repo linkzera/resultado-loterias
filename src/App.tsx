@@ -83,9 +83,14 @@ export function App() {
           })}
       
         </select>
+        <div className="logo_container">
         <img src="/logo.svg" alt="Logo da Loteria" />
         <h1>{game}</h1>
-        <p>Concurso Nº {lottery.concurso}</p>
+        </div>
+        <p className="mobile__date">Concurso Nº {lottery.concurso} - {lottery.data}</p>
+        <p className="date">Concurso 
+        <strong>{lottery.concurso} - {lottery.data}</strong>
+        </p>
       </div>
       <div className="app_container">
         {loading ?  <div className="loading"> <p>Carregando...</p> </div> :
