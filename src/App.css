@@ -1,5 +1,4 @@
 .app {
-  background-color: #6befa3;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
@@ -7,7 +6,6 @@
 
 .app_header {
   width: 100%;
-  background-color: #6befa3;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -112,8 +110,40 @@ select::-ms-expand {
   align-items: center;
 }
 
-.mega{
+.mega-sena{
   background-color: #6befa3;
   color: #ffffff;
+}
+
+.lotofacil{
+background-color: #DD7AC6;
+}
+
+.quina{
+  background-color: #8666EF;
+}
+
+.lotomania{
+  background-color: #FFAB64;
+}
+
+.timemania{
+  background-color: #5AAD7D;
+}
+
+.dupla-sena{
+  background-color: #bf194e;
+}
+
+.loteria-federal{
+  background-color: #0073a4;
+}
+
+.dia-de-sorte{
+  background-color: #BFAF83;
+}
+
+.super-sete{
+  background-color: #60721d;
 }
 

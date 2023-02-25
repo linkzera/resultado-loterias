@@ -64,13 +64,9 @@ export function App() {
   //   getNumbers();
   // }, []);
 
-  useEffect(() => {
-    console.log(game);
-  }, [game]);
-
   return (
     <main className="app">
-      <div className="app_header">
+      <div className={`app_header ${game}`}>
         <select name="lottery" id="lottery" className="select"
         onChange={(e) => setGame(e.target.value as EGames)}
         >
@@ -80,7 +76,7 @@ export function App() {
       
         </select>
         <img src={lotoImg} alt="Logo da Loteria" />
-        <h1>Mega-sena</h1>
+        <h1>{game}</h1>
         <p>Concurso Nº {lottery.concurso}</p>
       </div>
       <div className="app_container">
