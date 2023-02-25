@@ -5,6 +5,7 @@ import lotoImg from "./assets/Logo_sena.svg";
 import { api } from "./services/axios";
 
 export function App() {
+  const [loading, setLoading] = useState(true);
   const [game, setGame] = useState<EGames>(EGames["mega-sena"]);
   const [lottery, setLottery] = useState<IGames>({
     loteria: "mega-sena",
@@ -55,14 +56,22 @@ export function App() {
     mesSorte: null,
   } as IGames);
 
-  // useEffect(() => {
-  //   const getNumbers = async () => {
-  //     // const { data } = await api(EGames["mega-sena"]).get("/");
-  //     console.log(data);
-  //     setLottery(data);
-  //   };
-  //   getNumbers();
-  // }, []);
+  useEffect(() => {
+    const getNumbers = async () => {
+      try{
+        setLoading(true);
+        const { data } = await api(game).get("/");
+        setLottery(data);
+      }catch(err){
+        console.log(err);
+      }finally{
+        setLoading(false)
+      }
+    };
+    getNumbers();
+  }, [game]);
+
+
 
   return (
     <main className="app">
@@ -80,6 +89,7 @@ export function App() {
         <p>Concurso Nº {lottery.concurso}</p>
       </div>
       <div className="app_container">
+        {loading ?  <div className="loading"> <p>Carregando...</p> </div> :
         <div className="number_container">
           {lottery.dezenas?.map((number) => {
             return (
@@ -88,7 +98,7 @@ export function App() {
               </span>
             );
           })}
-        </div>
+        </div>}
         <p>
           Este sorteio é meramente ilustrativo e não possui nenhuma ligação com
           a CAIXA.
