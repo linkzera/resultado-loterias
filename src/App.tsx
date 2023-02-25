@@ -108,6 +108,12 @@ export function App() {
           a CAIXA.
         </p>
       </div>
+      <p style={{
+        position: 'absolute',
+        bottom: 0,
+      }}>
+        Repo: <a href="https://github.com/linkzera/resultado-loterias">resultado-loterias</a> 
+      </p>
     </main>
   );
 }
